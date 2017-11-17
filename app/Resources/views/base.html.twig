@@ -1,13 +1,67 @@
+
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Start Theme</title>
+  {% block stylesheets %}{% endblock %}
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css')}}"/ >
+
+      <!-- Custom styles for this template -->
+ <link rel="stylesheet" href="{{ asset('css/business-casual.css')}}"/ >
+
+<link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800')}}"/ >
+<link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic')}}"/ >
+
+
+
+  </head>
+
+
+  <body>
+
+    <div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">BILEL KESKES TEST </div>
+    <div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">Ajim Djerba 0023365005</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" >Test Application </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded"  href=" ">Produit</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="" >Panier</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% block body  %} {% endblock %}
+    <footer class="bg-faded text-center py-5">
+      <div class="container">
+        <p class="m-0">Copyright  2017 </p>
+      </div>
+    </footer>
+        <script src="{{ asset('vendor/jquery/jquery.min.js')}}" ></script>
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}" ></script>
+  </body>
 </html>
