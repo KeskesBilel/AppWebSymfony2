@@ -7,3 +7,6 @@ ecommerce_contactpage:
 ecommerce_produitpage:
     path:     /produit
     defaults: { _controller: EcommerceBundle:Default:pageproduit }
+ecommerce_ajoutepage:
+    path:     /ajoute
+    defaults: { _controller: EcommerceBundle:Default:pageajoute }

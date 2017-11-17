@@ -1,0 +1,10 @@
+
+{% extends "::layout.html.twig"%}
+{% block body %}
+Hello bilel!Page Ajout
+<br>
+<form action="{{path ("ecommerce_ajoutepage")}}" method="post">
+{{form_widget(form)}}
+<input type="submit">
+<br>
+{% endblock %}
