@@ -1,3 +1,9 @@
 ecommerce_homepage:
     path:     /
     defaults: { _controller: EcommerceBundle:Default:index }
+ecommerce_contactpage:
+    path:     /contact
+    defaults: { _controller: EcommerceBundle:Default:pagecontact }
+ecommerce_produitpage:
+    path:     /produit
+    defaults: { _controller: EcommerceBundle:Default:pageproduit }
