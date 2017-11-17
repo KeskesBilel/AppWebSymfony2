@@ -19,7 +19,12 @@ class DefaultController extends Controller
     }
     public function pageproduitAction()
     {
-        return $this->render('EcommerceBundle:Default:produit.html.twig');
+
+      {
+          $em = $this->getDoctrine()->getManager();
+          $bb = $em->getRepository("EcommerceBundle:article")->findAll();
+          return $this->render('EcommerceBundle:Default:produit.html.twig', array('cc' =>$bb));
+      }
     }
     public function pageajouteAction()
     {
