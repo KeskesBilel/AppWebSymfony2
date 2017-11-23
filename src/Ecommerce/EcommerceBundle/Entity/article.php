@@ -3,6 +3,8 @@
 namespace Ecommerce\EcommerceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * article
@@ -25,6 +27,8 @@ class article
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
+     *
+     *@Assert\NotBlank()
      */
     private $nom;
 

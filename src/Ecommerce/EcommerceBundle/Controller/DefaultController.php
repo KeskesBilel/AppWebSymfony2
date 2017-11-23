@@ -34,6 +34,8 @@ class DefaultController extends Controller
       $request = $this->getRequest();
       if ($request->isMethod('POST')) {
        $form->submit($request);
+     if ($form->isValid()){
+
 
         //$form->bind($request);
       $em->persist($a);
@@ -41,6 +43,8 @@ class DefaultController extends Controller
 
        return $this->redirect($this->generateUrl("ecommerce_ajoutepage"));
       }
+
+       }
 
        return $this->render('EcommerceBundle:Default:ajoute.html.twig', array('form' => $form->createView() ));
 
