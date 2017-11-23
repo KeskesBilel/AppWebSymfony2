@@ -10,3 +10,8 @@ ecommerce_produitpage:
 ecommerce_ajoutepage:
     path:     /ajoute
     defaults: { _controller: EcommerceBundle:Default:pageajoute }
+ecommerce_voirepage:
+    path:     /{id}/voir
+    defaults: { _controller: EcommerceBundle:Default:pagevoir }
+    requirements:
+       id: \d+

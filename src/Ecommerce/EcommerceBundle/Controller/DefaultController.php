@@ -49,4 +49,15 @@ class DefaultController extends Controller
        return $this->render('EcommerceBundle:Default:ajoute.html.twig', array('form' => $form->createView() ));
 
     }
+
+    public function pagevoirAction($id)
+    {
+
+      {
+          $em = $this->getDoctrine()->getManager();
+          $bb = $em->getRepository("EcommerceBundle:article")->findOneById($id);
+          return $this->render('EcommerceBundle:Default:voir.html.twig', array('cc' =>$bb));
+      }
+    }
+
 }

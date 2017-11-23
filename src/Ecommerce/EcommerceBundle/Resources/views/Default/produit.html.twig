@@ -54,7 +54,7 @@
                 <a href="#"><img class="card-img-top" src="img/slide-2.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
-                    <a href="#">{{a.nom}}</a>
+                    <a href="{{ path("ecommerce_voirepage",{id: a.id})}}">{{a.nom}}</a>
                   </h4>
                   <h5>{{a.prix}} $</h5>
                   <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
