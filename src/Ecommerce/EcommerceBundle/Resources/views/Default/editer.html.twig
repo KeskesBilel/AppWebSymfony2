@@ -1,0 +1,16 @@
+{% extends "::layout.html.twig"%}
+{% block body %}
+  <div class="bg-faded p-4 my-4">
+    <hr class="divider">
+    <h2 class="text-center text-lg text-uppercase my-0">
+      <strong>Hello bilel!Page Ajout</strong>
+    </h2>
+    <hr class="divider">
+
+        <div class="form-group col-lg-4">
+        <form action="{{path ("ecommerce_editerpage" , {id: id})}}" method="post">
+        {{form_widget(form)}}
+        <input type="submit">
+        </div>
+  </div>
+{% endblock %}

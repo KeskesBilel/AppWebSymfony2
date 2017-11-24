@@ -15,3 +15,8 @@ ecommerce_voirepage:
     defaults: { _controller: EcommerceBundle:Default:pagevoir }
     requirements:
        id: \d+
+ecommerce_editerpage:
+    path:     /{id}/editer
+    defaults: { _controller: EcommerceBundle:Default:pageediter }
+    requirements:
+       id: \d+
