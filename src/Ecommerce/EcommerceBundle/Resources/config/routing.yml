@@ -20,3 +20,8 @@ ecommerce_editerpage:
     defaults: { _controller: EcommerceBundle:Default:pageediter }
     requirements:
        id: \d+
+ecommerce_supprimerpage:
+    path:     /{id}/supprimer
+    defaults: { _controller: EcommerceBundle:Default:pagesupprimer }
+    requirements:
+       id: \d+

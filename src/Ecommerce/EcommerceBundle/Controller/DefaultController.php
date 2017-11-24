@@ -80,5 +80,15 @@ class DefaultController extends Controller
          }
 
 
+         public function pagesupprimerAction(article $article)
+                 {
+                   $em = $this->getDoctrine()->getManager();
+                   $em ->remove($article);
+                   $em ->flush();
+                   return $this->redirect($this->generateUrl("ecommerce_produitpage")) ;
+
+              }
+
+
 
 }
