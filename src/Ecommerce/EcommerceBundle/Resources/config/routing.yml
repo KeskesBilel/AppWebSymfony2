@@ -11,17 +11,17 @@ ecommerce_ajoutepage:
     path:     /ajoute
     defaults: { _controller: EcommerceBundle:Default:pageajoute }
 ecommerce_voirepage:
-    path:     /{id}/voir
+    path:     /voir/{id}
     defaults: { _controller: EcommerceBundle:Default:pagevoir }
     requirements:
        id: \d+
 ecommerce_editerpage:
-    path:     /{id}/editer
+    path:     /editer/{id}
     defaults: { _controller: EcommerceBundle:Default:pageediter }
     requirements:
        id: \d+
 ecommerce_supprimerpage:
-    path:     /{id}/supprimer
+    path:     /supprimer/{id}
     defaults: { _controller: EcommerceBundle:Default:pagesupprimer }
     requirements:
        id: \d+

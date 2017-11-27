@@ -41,7 +41,7 @@ class DefaultController extends Controller
               //$form->bind($request);
             $em->persist($a);
             $em->flush();
-             return $this->redirect($this->generateUrl("ecommerce_ajoutepage"));
+             return $this->redirect($this->generateUrl("ecommerce_produitpage"));
             }
              }
              return $this->render('EcommerceBundle:Default:ajoute.html.twig', array('form' => $form->createView() ));
