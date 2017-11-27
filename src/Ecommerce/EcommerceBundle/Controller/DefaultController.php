@@ -13,8 +13,6 @@ class DefaultController extends Controller
           {
               return $this->render('EcommerceBundle:Default:index.html.twig');
           }
-
-
     public function pagecontactAction()
           {
               return $this->render('EcommerceBundle:Default:contact.html.twig');
@@ -88,6 +86,14 @@ class DefaultController extends Controller
                    return $this->redirect($this->generateUrl("ecommerce_produitpage")) ;
 
               }
+
+              public function pagecategorieAction()
+                    {
+
+                          $em = $this->getDoctrine()->getManager();
+                          $bb = $em->getRepository("EcommerceBundle:article")->findAll();
+                          return $this->render('EcommerceBundle:Default:categorie.html.twig', array('cc' =>$bb));
+        }
 
 
 

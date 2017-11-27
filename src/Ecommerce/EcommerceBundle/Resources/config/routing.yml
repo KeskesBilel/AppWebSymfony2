@@ -25,3 +25,6 @@ ecommerce_supprimerpage:
     defaults: { _controller: EcommerceBundle:Default:pagesupprimer }
     requirements:
        id: \d+
+ecommerce_categoriepage:
+    path:     /categorie
+    defaults: { _controller: EcommerceBundle:Default:pagecategorie }

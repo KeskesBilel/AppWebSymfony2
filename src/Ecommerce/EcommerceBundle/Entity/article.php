@@ -25,23 +25,24 @@ class article
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="nom", type="string", length=255)
-     *
-     *@Assert\NotBlank()
-     */
+     * @Assert\Length(min="4", minMessage="Le nom doit faire au moins {{ limit }} caractères")
+     * @Assert\NotBlank(message="Les noms vides ne sont pas acceptés")
+    */
+
     private $nom;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="prix", type="integer")
+     * @Assert\Range(min=0, minMessage="La valeur doit être supérieure ou égale à 0" , invalidMessage="")
      */
     private $prix;
 
     /**
      * @var integer
      *
+     * @Assert\Range(min=0, minMessage="La valeur doit être supérieure ou égale à 0" , invalidMessage="")
      * @ORM\Column(name="tva", type="integer")
      */
     private $tva;
@@ -49,7 +50,7 @@ class article
     /**
      * @var string
      *
-     * @ORM\Column(name="cat", type="string", length=255)
+      * @Assert\NotBlank(message="Les noms vides ne sont pas acceptés")
      */
     private $cat;
 
