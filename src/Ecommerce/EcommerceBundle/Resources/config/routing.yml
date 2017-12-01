@@ -28,3 +28,6 @@ ecommerce_supprimerpage:
 ecommerce_categoriepage:
     path:     /categorie
     defaults: { _controller: EcommerceBundle:Default:pagecategorie }
+ecommerce_recherchepage:
+    path:     /recherche
+    defaults: { _controller: EcommerceBundle:Recherche:pagerecherche }

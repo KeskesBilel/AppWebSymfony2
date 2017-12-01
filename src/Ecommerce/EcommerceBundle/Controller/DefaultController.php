@@ -2,10 +2,12 @@
 
 namespace Ecommerce\EcommerceBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Ecommerce\EcommerceBundle\Entity\article;
 use Ecommerce\EcommerceBundle\Form\articleType;
+
+
 
 class DefaultController extends Controller
 {
@@ -20,11 +22,9 @@ class DefaultController extends Controller
 
     public function pageproduitAction()
           {
-
                 $em = $this->getDoctrine()->getManager();
                 $bb = $em->getRepository("EcommerceBundle:article")->findAll();
                 return $this->render('EcommerceBundle:Default:produit.html.twig', array('cc' =>$bb));
-
           }
 
     public function pageajouteAction()
@@ -65,8 +65,7 @@ class DefaultController extends Controller
                 //$form->bind($request);
               $em->persist($article);
               $em->flush();
-               return $this->redirect($this->generateUrl("ecommerce_voirepage",
-                array('id' => $article->getId(),
+               return $this->redirect($this->generateUrl("ecommerce_voirepage", array('id' => $article->getId(),
                ))
              );
               }
@@ -84,16 +83,14 @@ class DefaultController extends Controller
                    $em ->remove($article);
                    $em ->flush();
                    return $this->redirect($this->generateUrl("ecommerce_produitpage")) ;
+                 }
 
-              }
-
-              public function pagecategorieAction()
+        public function pagecategorieAction()
                     {
-
                           $em = $this->getDoctrine()->getManager();
                           $bb = $em->getRepository("EcommerceBundle:article")->findAll();
-                          return $this->render('EcommerceBundle:Default:categorie.html.twig', array('cc' =>$bb));
-        }
+                          return $this->render('EcommerceBundle:Default:Categorie.html.twig', array('cc' =>$bb));
+                     }
 
 
 

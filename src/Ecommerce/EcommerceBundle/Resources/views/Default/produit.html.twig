@@ -58,15 +58,17 @@
                     {{a.nom}}
                   </h4>
                   <h5>{{a.prix}} $</h5>
-
                   <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
                 </div>
                 <div class="card-footer">
             <p class="card-text">
-                    <a href="{{ path("ecommerce_supprimerpage",{id: a.id})}}">Supprimer</a>
-                      <a href="{{ path("ecommerce_voirepage",{id: a.id})}}">/Plus d'info</a>
+                      {% if is_granted ('ROLE_ADMIN') %}
+                      <a href="{{ path("ecommerce_supprimerpage",{id: a.id})}}">Supprimer/</a>
+                      {% endif %}
+                      <a href="{{ path("ecommerce_voirepage",{id: a.id})}}">Plus d'info</a>
+                      {% if is_granted ('ROLE_ADMIN') %}
                       <a href="{{ path("ecommerce_editerpage",{id: a.id})}}">/Editer </a>
-
+                      {% endif %}
                       </p>
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                 </div>
