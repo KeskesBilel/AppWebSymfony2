@@ -1,0 +1,38 @@
+
+{% extends "::layout.html.twig"%}
+{% set totalHT = 0  %}
+{%  set totalTTC = 0 %}
+{% block body  %}
+<div class="container">
+<div class="card h-100">
+<CENTER><TABLE border=1  width=90%  >
+<tr>
+<td>Nom</td>
+<td>Qte</td>
+<td>Prix</td>
+<td>TVA</td>
+<td>totalHT</td>
+<td>totalTTC</td>
+  </tr>
+ {% for p  in cc  %}
+<tr>
+<td>{{p.nom}}</td>
+<td>{{panier[p.id]}}</td>
+<td>{{p.prix}} $</td>
+<td>{{p.tva}} %</td>
+<td>{{p.prix * panier[p.id]}}</td>
+<td>{{p.prix * panier[p.id] + (p.prix * panier[p.id]* p.tva / 100)}}</td>
+</form>
+{% set totalHT = totalHT + (p.prix * panier[p.id]) %}
+{% set totalTTC = totalTTC + (p.prix * panier[p.id] + (p.prix * panier[p.id]* p.tva / 100)) %}
+{%endfor%}
+</tr>
+</table>
+<h4>Total HT={{totalHT}} £</h4>
+<h4>Total TTC={{totalTTC}} £ </h4>
+
+  <a class='btn btn-primary' href="{{ path("panier")}}"> panier</a><p>
+
+        </div>
+        </div>
+ {% endblock %}

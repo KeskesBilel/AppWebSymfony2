@@ -48,3 +48,6 @@ supprimerpanier:
 panier:
     path:     /panier
     defaults: { _controller: EcommerceBundle:Panier:panier }
+validation:
+    path:     /validation
+    defaults: { _controller: EcommerceBundle:Validation:validation }
