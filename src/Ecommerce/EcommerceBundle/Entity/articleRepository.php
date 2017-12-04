@@ -10,4 +10,24 @@ namespace Ecommerce\EcommerceBundle\Entity;
  */
 class articleRepository extends \Doctrine\ORM\EntityRepository
 {
+
+public function findProduiteBynom($motclee){
+
+  $query= $this->createQueryBuilder('p')
+  ->where('p.nom like :nom ')
+  ->setParameter('nom',$motclee.'%')
+  ->orderBy('p.nom','ASC')
+  ->getQuery();
+  return $query->getResult();
+}
+
+public function findArray($array){
+
+  $query= $this->createQueryBuilder('p')
+  ->Select('p')
+  ->where('p.id IN (:array) ')
+  ->setParameter('array',$array);
+  return $query->getQuery()->getResult();
+}
+
 }

@@ -22,9 +22,16 @@ class DefaultController extends Controller
 
     public function pageproduitAction()
           {
-                $em = $this->getDoctrine()->getManager();
-                $bb = $em->getRepository("EcommerceBundle:article")->findAll();
-                return $this->render('EcommerceBundle:Default:produit.html.twig', array('cc' =>$bb));
+            $session = $this->getRequest()->getSession();
+            $em = $this->getDoctrine()->getManager();
+            $bb = $em->getRepository("EcommerceBundle:article")->findAll();
+
+            if(!$session->has('panier'))
+            $panier =$session->get('panier');
+            else
+            $panier = false ;
+            return $this->render('EcommerceBundle:Default:produit.html.twig', array('cc' =>$bb,
+                                                                                    'panier'=>$panier));
           }
 
     public function pageajouteAction()
@@ -48,9 +55,15 @@ class DefaultController extends Controller
 
     public function pagevoirAction($id)
             {
-                  $em = $this->getDoctrine()->getManager();
-                  $bb = $em->getRepository("EcommerceBundle:article")->findOneById($id);
-                  return $this->render('EcommerceBundle:Default:voir.html.twig', array('cc' =>$bb));
+              $session = $this->getRequest()->getSession();
+              $em = $this->getDoctrine()->getManager();
+              $bb = $em->getRepository("EcommerceBundle:article")->findOneById($id);
+              if(!$session->has('panier'))
+              $panier =$session->get('panier');
+              else
+              $panier = false ;
+                  return $this->render('EcommerceBundle:Default:voir.html.twig', array('cc' =>$bb,
+                                                                                      'panier'=>$panier));
             }
 
 

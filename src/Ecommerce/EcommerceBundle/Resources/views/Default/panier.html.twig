@@ -1,0 +1,56 @@
+
+{% extends "::layout.html.twig"%}
+{% set totalHT = 0  %}
+{%  set totalTTC = 0 %}
+{% block body  %}
+<div class="container">
+<div class="card h-100">
+{% for flashMessage in app.session.flashbag.get('success')%}
+<div class="alert alert-success">
+{{flashMessage}}
+{%endfor%}
+<br>
+{% if cc|length == 0 %}
+aucun article dans votre panier
+{%else%}
+<CENTER><TABLE border=1  width=90%  >
+<tr>
+<td>nom</td>
+<td>qte</td>
+<td>Supprimer</td>
+<td>prix</td>
+<td>TVA</td>
+<td>total</td>
+<td>totalTVA</td>
+  </tr>
+ {% for p  in cc  %}
+<tr>
+<form action="{{ path("ajouterpanier",{id: p.id})}}" method="get">
+<td>{{p.nom}}</td>
+<td>
+<select name='qte'class="span1" onChange="this.form.submit()">
+{%for i in 1..10 %}
+<option value='{{i}}' {%if i==panier[p.id]%} selected="selected" {%endif%} >{{i}} </option>
+{%endfor%}
+  </select>
+  </td>
+
+  <td>
+  <a href="{{ path("supprimerpanier",{id: p.id})}}"  >supp</a>
+</td>
+<td>{{p.prix}} $</td>
+<td>{{p.tva}} %</td>
+<td>{{p.prix * panier[p.id]}}</td>
+<td>{{p.prix * panier[p.id] + (p.prix * panier[p.id]* p.tva / 100)}}</td>
+</form>
+{% set totalHT = totalHT + (p.prix * panier[p.id]) %}
+{% set totalTTC = totalTTC + (p.prix * panier[p.id] + (p.prix * panier[p.id]* p.tva / 100)) %}
+{%endfor%}
+</tr>
+</table>
+<h4>Total HT={{totalHT}} £</h4>
+<h4>Total TTC={{totalTTC}} £ </h4>
+{%endif%}
+        </div>
+        </div>
+ {% endblock %}

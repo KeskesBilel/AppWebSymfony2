@@ -14,10 +14,22 @@
                 {{cc.nom}}
                   </h4>
                   <h5>{{cc.prix}} $</h5>
-                  
+
                   <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
 
+                
+                  <form action="{{ path("ajouterpanier",{id: cc.id})}}" method="get">
+                  <select name='qte'class="span1">
+                  {%for i in 1..10%}
+                  <option value= '{{i}}'>{{i}} </option>
+                  {%endfor%}
+                    </select>
+                    </p ><button class='btn btn-primary'>Ajouter au panier</button><p>
+
+                  </form>
+
                 </div>
+
 
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

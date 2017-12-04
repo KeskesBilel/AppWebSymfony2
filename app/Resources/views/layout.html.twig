@@ -52,9 +52,19 @@
               <a class="nav-link text-uppercase text-expanded" href= "{{ path('ecommerce_contactpage')}}">Contact</a>
             </li>
             <li class="nav-item px-lg-4">
+
+              {% if is_granted ('ROLE_ADMIN') %}
               <a class="nav-link text-uppercase text-expanded" href= "{{ path('ecommerce_ajoutepage')}}">Ajouter</a>
+              {% endif %}
+
             </li>
           </ul>
+          <form class="navbar-form navbar-right" method="post" action="{{ path('ecommerce_recherchepage')}}">
+          <input type="text" class="form-control" name="motcle">
+        </form>
+        <form class="navbar-form navbar-right" method="post" action="{{ path('ecommerce_recherche')}}">
+        <input type="text" class="form-control" name="motclee">
+      </form>
         </div>
       </div>
     </nav>

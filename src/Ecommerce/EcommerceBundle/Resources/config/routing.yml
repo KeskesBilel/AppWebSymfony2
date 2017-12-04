@@ -31,3 +31,20 @@ ecommerce_categoriepage:
 ecommerce_recherchepage:
     path:     /recherche
     defaults: { _controller: EcommerceBundle:Recherche:pagerecherche }
+ecommerce_recherche:
+    path:     /recherchee
+    defaults: { _controller: EcommerceBundle:Recherche:Recherche2 }
+
+ajouterpanier:
+    path:     /ajouterpanier/{id}
+    defaults: { _controller: EcommerceBundle:Panier:ajouterpanier }
+    requirements:
+       id: \d+
+supprimerpanier:
+    path:     /supprimerpanier/{id}
+    defaults: { _controller: EcommerceBundle:Panier:supprimerpanier }
+    requirements:
+       id: \d+
+panier:
+    path:     /panier
+    defaults: { _controller: EcommerceBundle:Panier:panier }

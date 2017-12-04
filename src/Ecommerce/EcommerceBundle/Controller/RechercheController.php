@@ -30,6 +30,18 @@ class RechercheController extends Controller
                                  return $this->render('EcommerceBundle:Default:produit.html.twig', array('cc' =>$bb ));
                            }
 
+                           public function Recherche2Action(Request $request)
+                                             {
+                                                   $em = $this->getDoctrine()->getManager();
+                                                   $motclee = $request->get('motclee');
+                                                   //1 methode
+                                                   $bb = $em->getRepository("EcommerceBundle:article")->findProduiteBynom($motclee);
+
+                                                   //2 methode avec findBy
+                                                   // $bb = $em->getRepository("EcommerceBundle:article")
+                                                   //  -> findBy( array('nom' => $motcle ));
+                                                   return $this->render('EcommerceBundle:Default:produit.html.twig', array('cc' =>$bb ));
+                                             }
 
 
 }
