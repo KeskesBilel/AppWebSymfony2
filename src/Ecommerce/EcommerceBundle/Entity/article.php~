@@ -47,6 +47,7 @@ class article
      */
     private $tva;
 
+
     /**
      * @var string
      *@ORM\Column(name="description", type="string", length=255)
@@ -164,29 +165,5 @@ class article
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Set cat
-     *
-     * @param string $cat
-     *
-     * @return article
-     */
-    public function setCat($cat)
-    {
-        $this->cat = $cat;
-
-        return $this;
-    }
-
-    /**
-     * Get cat
-     *
-     * @return string
-     */
-    public function getCat()
-    {
-        return $this->cat;
     }
 }

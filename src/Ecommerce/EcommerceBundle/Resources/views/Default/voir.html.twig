@@ -2,49 +2,26 @@
 {% extends "::layout.html.twig"%}
 {% block body  %}
 <div class="container">
+                       <div class="bg-faded p-4 my-4">
 
-      <div class="row">
-        <div class="col-lg-9">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="../img/slide-2.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                {{cc.nom}}
-                  </h4>
-                  <h5>{{cc.prix}} $</h5>
-
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-
-                
-                  <form action="{{ path("ajouterpanier",{id: cc.id})}}" method="get">
-                  <select name='qte'class="span1">
-                  {%for i in 1..10%}
-                  <option value= '{{i}}'>{{i}} </option>
-                  {%endfor%}
-                    </select>
-                    </p ><button class='btn btn-primary'>Ajouter au panier</button><p>
-
-                  </form>
-
-                </div>
+                                <a href="#"><img class="img-fluid float-left mr-4 d-none d-lg-block" src="../img/intro-pic.jpg" alt=""></a>
+                                <p>  {{cc.nom}} </p>
+                                <p> {{cc.prix}} $ </p>
+                                <p> {{cc.description}} </p>
+                                <p>
+                                <form action="{{ path("ajouterpanier",{id: cc.id})}}" method="get">
+                                <select name='qte'class="span1">
+                                {%for i in 1..10%}
+                                <option value= '{{i}}'>{{i}} </option>
+                                {%endfor%}
+                                </select>
+                                <p><button class='btn btn-primary'>Ajouter au panier</button></p>
+                                </p>
+                                </form>
+                       </div>
 
 
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
-            </div>
 
-          </div>
-          <!-- /.row -->
 
-        </div>
-        <!-- /.col-lg-9 -->
 
-      </div>
-      <!-- /.row -->
-
-    </div>
  {% endblock %}

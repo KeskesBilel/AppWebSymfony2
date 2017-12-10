@@ -19,9 +19,10 @@ class articleType extends AbstractType
             ->add('prix')
             ->add('tva')
             ->add('cat')
+            ->add('description')
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

@@ -11,7 +11,7 @@
           <div class="list-group">
           <h5  class="list-group-item">Les Categories</h5>
           {% for a in cc  %}
-            <a href="#" class="list-group-item">{{a.cat}}</a>
+            <a href="#" class="list-group-item">bilel</a>
         {% endfor  %}
           </div>
 
@@ -52,13 +52,13 @@
  {% for a in cc  %}
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="img/slide-2.jpg" alt=""></a>
+                <a href="#"><img class="card-img-top" src="img/intro-pic.jpg" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     {{a.nom}}
                   </h4>
                   <h5>{{a.prix}} $</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                  <p class="card-text">{{a.description}}</p>
                 </div>
                 <div class="card-footer">
             <p class="card-text">
